@@ -73,6 +73,7 @@ import { getHostedClusterId } from "../utils";
 import { ClusterStore } from "../../common/cluster-store";
 import type { ClusterId } from "../../common/cluster-types";
 import { watchHistoryState } from "../remote-helpers/history-updater";
+import { PortForwardDialog } from "./+network-port-forwards/port-forward-dialog";
 
 @observer
 export class App extends React.Component {
@@ -216,6 +217,7 @@ export class App extends React.Component {
           <StatefulSetScaleDialog/>
           <ReplicaSetScaleDialog/>
           <CronJobTriggerDialog/>
+          <PortForwardDialog/>
           <CommandContainer clusterId={App.clusterId}/>
         </ErrorBoundary>
       </Router>
