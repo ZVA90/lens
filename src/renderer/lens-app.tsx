@@ -36,7 +36,6 @@ import { registerIpcListeners } from "./ipc";
 import { ipcRenderer } from "electron";
 import { IpcRendererNavigationEvents } from "./navigation/events";
 import { catalogEntityRegistry } from "./api/catalog-entity-registry";
-import { registerKeyboardShortcuts } from "./keyboard-shortcuts";
 
 @observer
 export class LensApp extends React.Component {
@@ -49,7 +48,6 @@ export class LensApp extends React.Component {
     window.addEventListener("offline", () => broadcastMessage("network:offline"));
     window.addEventListener("online", () => broadcastMessage("network:online"));
 
-    registerKeyboardShortcuts();
     registerIpcListeners();
   }
 
